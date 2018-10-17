@@ -19,5 +19,24 @@ npm uninstall -g @vue/cli  # 卸载vue最新的版本）
 vue-cli官网：https://cli.vuejs.org
 安装完毕后，可以使用 vue -V 查看安装的版本
 
+NPM能很好地和诸如 Webpack 或Browserify 模块打包器配合使用。
+
 3、创建project
 vue create frontuiauto  # frontuiauto是project的名称，这是使用vue3创建project的方法，暂时不用
+vue-init webpack frontend  # frontend是project的名称
+
+4、安装依赖包
+cd frontend
+cnmp install 如果安装了cnmp
+npm install
+
+npm run build
+npm run dev
+
+4、安装cnpm
+由于有些npm有些资源被屏蔽或者是国外资源的原因，经常会导致用npm安装依赖包的时候失败，因此要么FQ要么就使用国内镜像cnpm。
+打开https://npm.taobao.org/，我们可以了解到这是一个完整npmjs.org 镜像，可以用此代替官方版本(只读)，同步频率目前为 10分钟
+一次以保证尽量与官方服务同步。
+同样在命令行中输入
+npm install -g cnpm --registry=http://registry.npm.taobao.org
+输入cnpm -v检测
