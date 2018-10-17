@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'uiauto',  # 添加uiauto的应用
 ]
 
 MIDDLEWARE = [

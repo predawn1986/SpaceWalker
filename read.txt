@@ -1,0 +1,23 @@
+一、整合django和vue（mac）
+1、安装node.js
+brew install node
+安装完毕后,使用以下命令查看node.js的版本
+node -v
+安装完毕后，默认会安装npm，所以不在需要安装npm
+查看npm版本号
+npm -v
+
+2、安装 vue-cli
+npm install -g vue-cli  # 这个方法安装的是2.9.6的版本，不是最新的
+卸载 vue-cli
+npm uninstall -g vue-cli
+
+vue3版本的安装和卸载【暂时不用】
+（npm install -g @vue/cli  # 这个方法安装的是最新的版本
+npm uninstall -g @vue/cli  # 卸载vue最新的版本）
+
+vue-cli官网：https://cli.vuejs.org
+安装完毕后，可以使用 vue -V 查看安装的版本
+
+3、创建project
+vue create frontuiauto  # frontuiauto是project的名称，这是使用vue3创建project的方法，暂时不用
