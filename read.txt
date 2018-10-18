@@ -30,10 +30,13 @@ cd frontend
 cnmp install 如果安装了cnmp
 npm install
 
-npm run build
-npm run dev
+5、npm run build和npm run dev的区别
+package.json里面：
+"dev": "node build/dev-server.js",
+"build": "node build/build.js",
+意思：运行”npm run dev”的时候执行的是build/dev-server.js文件，运行”npm run build”的时候执行的是build/build.js文件
 
-4、安装cnpm
+5、安装cnpm
 由于有些npm有些资源被屏蔽或者是国外资源的原因，经常会导致用npm安装依赖包的时候失败，因此要么FQ要么就使用国内镜像cnpm。
 打开https://npm.taobao.org/，我们可以了解到这是一个完整npmjs.org 镜像，可以用此代替官方版本(只读)，同步频率目前为 10分钟
 一次以保证尽量与官方服务同步。

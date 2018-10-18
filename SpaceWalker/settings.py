@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [],
-        'DIRS': ['frontiuauto/dist'],
+        'DIRS': ['frontui/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,5 +125,5 @@ STATIC_URL = '/static/'
 
 # Add for Vue.js
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontiuauto/dist/static'),
+    os.path.join(BASE_DIR, 'frontui/dist/static'),
 ]
