@@ -27,8 +27,14 @@
         </ul>
 
         <ul>
-            <li v-for="(key, value) in object">
-                {{key}}
+            <li v-for="(value, key, index) in object">
+                {{index}}.{{key}}: {{value}}
+            </li>
+        </ul>
+        
+        <ul>
+            <li v-for="n in 10">
+                {{n}}
             </li>
         </ul>
     </div>
