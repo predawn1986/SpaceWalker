@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bind Style</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style type="text/css">
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+            font-size: 20px;
+        }
+
+        .text-danger {
+            background: red;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 当对v-bind使用对象语法时，当key中含有js不支持的变量命名格式，如：-（不是下划线）和空格，这时就需要用' ' 引起来 -->
+        <div v-bind:class="{'active': isActive, 'text-danger': hasError}">Hello, kitty!</div>
+        <br>
+        <div v-bind:class="classObject"></div>
+        <br>
+        <div v-bind:class="[errorClass, isActive?activeClass:'']"></div>
+        <br>
+        <div v-bind:style="{color: activeColor, fontSize: fontSize+'px'}">SpaceWalker</div>
+        <br>
+        <div v-bind:style="styleObject">SpaceWalker--two</div>
+        <br>
+        <div v-bind:style="[baseStyles, overridingStyles]">星星点灯</div>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                isActive: true,
+                hasError: true,
+                error: null,
+                activeClass: 'active',
+                errorClass: 'text-danger',
+                activeColor: 'yellow',
+                fontSize: 30,
+                styleObject: {
+                    color: 'black',
+                    fontSize: '33px'
+                },
+                baseStyles: {
+                    color: 'orange',
+                    fontSize: '20px'
+                },
+                overridingStyles: {
+                    'font-weight': 'bold'
+                }
+                // classObject: {
+                //     "active": true,
+                //     "text-danger": false
+                // }
+            },
+            computed: {
+                classObject: function(){
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
