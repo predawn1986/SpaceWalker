@@ -13,6 +13,9 @@ var vm = new Vue({
             if (event) {
                 alert(event.target.tagName)
             }
+        },
+        say: function(message){
+            alert(message)
         }
     }
 })
