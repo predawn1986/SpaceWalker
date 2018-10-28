@@ -1,5 +1,5 @@
 // 自定义过滤器 "currency"
-Vue.filter('currency', function(value){
+Vue.filter('currency', function (value) {
     return '$' + value.toFixed(2);
 });
 
