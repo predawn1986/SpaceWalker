@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js 订单表单</title>
+    <script type="text/javascript" src="../../vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="order_list.css">
+</head>
+<body>
+
+<!-- v-cloak 隐藏未编译的变量，直到 Vue 实例准备就绪。 -->
+
+<form id="main" v-cloak>
+    
+    <h1>Services</h1>
+
+    <ul>
+        
+        循环输出 services 数组，设置选项点击后的样式
+
+        <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+
+            <!-- 显示订单中的服务名，价格
+                 Vue.js 定义了货币过滤器，用于格式化价格 -->
+            {{service.name}}<span>{{service.price | currency}}</span>
+
+        </li>
+
+    </ul>
+
+    <div class="total">
+        
+        <!-- 计算所有服务的价格，并格式化货币 -->
+        Total: <span>{{total() | currency}}</span>
+    
+    </div>
+
+</form>
+
+<script type="text/javascript" src="order_list.js"></script>
+
+</body>
+</html>
