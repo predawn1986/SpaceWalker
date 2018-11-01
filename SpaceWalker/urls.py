@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     # url(r'^index/', uiauto_view.index),
-    # url(r'^api/', include('uiauto.urls', namespace='api')),
+    url(r'^api/', include('uiauto.urls')),
 ]
