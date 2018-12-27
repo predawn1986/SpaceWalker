@@ -43,3 +43,7 @@ package.json里面：
 同样在命令行中输入
 npm install -g cnpm --registry=http://registry.npm.taobao.org
 输入cnpm -v检测
+
+
+二、admin超级用户用户名和密码
+admin/Admin123456
